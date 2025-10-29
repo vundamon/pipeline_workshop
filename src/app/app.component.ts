@@ -3,10 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'pw-root',
-  standalone: true,
-  imports: [FormsModule, NgIf],
-  template: `
+    selector: 'pw-root',
+    imports: [FormsModule, NgIf],
+    template: `
     <main class="club">
       <h1 data-testid="title">🦕 Dino Fan Club</h1>
 
@@ -42,7 +41,7 @@ import { NgIf } from '@angular/common';
       </small>
     </main>
   `,
-  styles: [`
+    styles: [`
     .club { font-family: Arial, sans-serif; padding: 1.75rem; max-width: 560px; }
     h1 { margin: 0 0 0.75rem; color: #256029; }
     .intro { margin: 0 0 1.25rem; font-style: italic; color: #444; }
