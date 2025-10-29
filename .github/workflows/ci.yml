@@ -25,11 +25,5 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Unit test
-        run: npm test
-
-      - name: Start app (background)
-        run: npm run start:wait
-
-      - name: Cypress e2e
-        run: npm run e2e
+      - name: Start app and run Cypress tests
+        run: npm run e2e:full
