@@ -14,6 +14,7 @@
     "test": "ng test --watch=false",
     "e2e": "cypress run",
     "e2e:open": "cypress open",
+    "e2e:full": "start-server-and-test 'ng serve' http://localhost:4200 'cypress run'",
     "ci": "npm run lint && npm run test && npm run e2e"
   },
   "dependencies": {
@@ -49,5 +50,6 @@
     "semver": "^7.5.4",
     "typescript": "~5.8.3",
     "wait-on": "^7.0.0"
+    ,"start-server-and-test": "^2.0.3"
   }
 }
