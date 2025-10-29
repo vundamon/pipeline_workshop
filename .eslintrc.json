@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "ignorePatterns": ["dist", "coverage"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "prettier"
+      ],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "sourceType": "module"
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          { "type": "element", "prefix": "pw", "style": "kebab-case" }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    },
+    {
+      "files": ["cypress/**/*.ts"],
+      "extends": ["plugin:@cypress/recommended"],
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Angular / Node
+node_modules
+.dist
+/dist
+coverage
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
