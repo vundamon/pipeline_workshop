@@ -17,7 +17,7 @@ Testers are most familiar with end-to-end (Cypress). We keep just:
 
 ## Local Flow
 ```bash
-npm ci
+npm install
 npm start
 # in another shell:
 npm run e2e

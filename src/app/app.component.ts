@@ -7,34 +7,58 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [FormsModule, NgIf],
   template: `
-    <main class="app">
-      <h1 data-testid="title">Pipeline Workshop Demo</h1>
+    <main class="club">
+      <h1 data-testid="title">🦕 Dino Fan Club</h1>
 
-      <label>
+      <p class="intro" data-testid="intro">
+        Tiny site. Huge enthusiasm. Zero fear of meteors.
+      </p>
+
+      <label class="member-line">
         Your name:
-        <input data-testid="name-input" [(ngModel)]="name" placeholder="Type name..." />
+        <input
+          data-testid="name-input"
+          [(ngModel)]="rawName"
+          (input)="syncName()"
+          placeholder="e.g. Stego Sam"
+        />
       </label>
 
-      <p data-testid="greeting" *ngIf="name; else generic">
-        Hello, {{ name.trim() || 'friend' }}!
+      <p data-testid="greeting" *ngIf="cleanName; else fallback">
+        RAWR, {{ cleanName }}! Welcome to the club.
       </p>
-      <ng-template #generic>
-        <p data-testid="greeting">Hello!</p>
+      <ng-template #fallback>
+        <p data-testid="greeting">Greetings, carbon-based time traveler!</p>
       </ng-template>
 
-      <small class="hint">
-        This tiny app exists to demonstrate lint + Cypress in CI.
+      <ul class="notes" data-testid="facts">
+        <li>T‑Rex committee still lobbying for longer arms.</li>
+        <li>We pronounce GIF like “Giga-Iguanodon Format”.</li>
+        <li>Official snack: paleo-friendly veggie comets.</li>
+      </ul>
+
+      <small class="foot">
+        This playful page powers our pipeline demo (lint + Cypress). Hack away!
       </small>
     </main>
   `,
   styles: [`
-    .app { font-family: Arial, sans-serif; padding: 2rem; max-width: 480px; }
-    h1 { color: #1976d2; margin-top: 0; }
-    label { display: flex; gap: 0.5rem; margin: 1rem 0; }
-    input { flex: 1; }
-    .hint { color: #666; display: block; margin-top: 2rem; }
+    .club { font-family: Arial, sans-serif; padding: 1.75rem; max-width: 560px; }
+    h1 { margin: 0 0 0.75rem; color: #256029; }
+    .intro { margin: 0 0 1.25rem; font-style: italic; color: #444; }
+    .member-line { display: flex; gap: 0.6rem; align-items: center; margin: 1rem 0; }
+    input { flex: 1; padding: 0.45rem 0.6rem; }
+    [data-testid="greeting"] { font-weight: 600; margin: 0.75rem 0 1rem; }
+    .notes { margin: 0 0 1.5rem; padding-left: 1.2rem; }
+    .notes li { margin-bottom: 0.4rem; }
+    .foot { font-size: 0.7rem; color: #666; display: block; }
   `]
 })
 export class AppComponent {
-  name = '';
+  rawName = '';
+  cleanName = '';
+
+  syncName(): void {
+    this.cleanName = (this.rawName || '').trim();
+  }
 }

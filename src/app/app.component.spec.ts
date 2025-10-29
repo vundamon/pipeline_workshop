@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('AppComponent (minimal)', () => {
+describe('AppComponent (dino theme)', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async () => {
@@ -13,16 +13,17 @@ describe('AppComponent (minimal)', () => {
     fixture.detectChanges();
   });
 
-  it('shows generic greeting when no name', () => {
+  it('shows fallback greeting when no name', () => {
     const greeting: HTMLElement = fixture.nativeElement.querySelector('[data-testid="greeting"]');
-    expect(greeting.textContent?.trim()).toBe('Hello!');
+    expect(greeting.textContent?.trim()).toBe('Greetings, carbon-based time traveler!');
   });
 
-  it('updates greeting when name entered', () => {
+  it('shows RAWR greeting after name input', () => {
     const instance = fixture.componentInstance;
-    instance.name = 'Ada';
+    instance.rawName = 'Ada';
+    instance.syncName();
     fixture.detectChanges();
     const greeting: HTMLElement = fixture.nativeElement.querySelector('[data-testid="greeting"]');
-    expect(greeting.textContent?.trim()).toBe('Hello, Ada!');
+    expect(greeting.textContent?.trim()).toBe('RAWR, Ada! Welcome to the club.');
   });
 });

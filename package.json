@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "ng serve",
+    "start:wait": "ng serve & wait-on http://localhost:4200",
     "build": "ng build",
     "lint": "eslint . --ext .ts,.html",
     "format": "prettier --write \"src/**/*.{ts,html,css}\"",
@@ -42,8 +43,9 @@
     "@angular-eslint/eslint-plugin": "^18.0.0",
     "@angular-eslint/eslint-plugin-template": "^18.0.0",
     "@angular-eslint/template-parser": "^18.0.0",
-    "cypress": "^13.13.0",
-    "@cypress/eslint-plugin-cypress": "^3.5.0",
+  "cypress": "^13.13.0",
+  "eslint-plugin-cypress": "^3.5.0",
     "wait-on": "^7.0.0"
+    ,"semver": "^7.5.4"
   }
 }
