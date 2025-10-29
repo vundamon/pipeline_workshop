@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/angular-cli",
   "version": 1,
   "projects": {
     "pipeline-workshop": {
@@ -9,7 +8,7 @@
       "prefix": "pw",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/pipeline-workshop",
             "index": "src/index.html",
@@ -33,7 +32,7 @@
           }
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "pipeline-workshop:build"
           },
@@ -44,7 +43,7 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
             "polyfills": ["zone.js", "zone.js/testing"],
