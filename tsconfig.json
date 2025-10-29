@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -18,7 +18,13 @@
     "sourceMap": true,
     "target": "ES2022",
     "useDefineForClassFields": false,
-    "types": ["node", "jasmine"],
-    "lib": ["es2022", "dom"]
+    "types": [
+      "node",
+      "jasmine"
+    ],
+    "lib": [
+      "es2022",
+      "dom"
+    ]
   }
 }
