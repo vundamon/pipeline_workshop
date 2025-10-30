@@ -8,6 +8,7 @@ coverage
 # Cypress
 cypress/videos
 cypress/screenshots
+build
 
 # Logs
 *.log
